@@ -15,7 +15,7 @@ cd server
 npm install
 ```
 
-You **MUST** create a .env file for **ANY** of these examples to work!
+You **MUST** create a .env file in the /server/ directory for **ANY** of these examples to work!
 
 To do this directly from the terminal:
 
@@ -39,7 +39,7 @@ curl localhost:5000/api/date/$(date '+%Y-%m-%d') | json_pp
 
 ```bash
 ## in new terminal
-cd client
+cd ../client
 yarn install
 yarn start
 ```
