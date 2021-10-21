@@ -1,0 +1,13 @@
+version: "3"
+services:
+  client:
+    image: lrth06/apod_client
+    ports:
+      - "80:80"
+
+  proxy:
+    image: lrth06/apod_proxy
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./server/.env
