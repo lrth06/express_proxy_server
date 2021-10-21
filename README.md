@@ -44,7 +44,7 @@ yarn install
 yarn start
 ```
 
-## To Use in Docker
+### To Use in Docker
 
 ```bash
 git clone https://github.com/lrth06/express_proxy_server.git
