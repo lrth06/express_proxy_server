@@ -11,17 +11,16 @@ const apiKey = process.env.API_KEY
 
 
 app.use(cors())
+app.options('*', cors());
 app.use(express.json())
 
 app.get('/api/random/:request',async(req,res)=>{
-    console.log(req.params.request)
     let request =req.params.request
     let url = baseURL + '?api_key='+apiKey+'&'+request
     console.log(url)
    try{
     const response = await axios.get(url)
     if(response){
-        console.log(response)
         res.status(200).json(response.data)
     }
    }catch(err){
@@ -30,10 +29,8 @@ app.get('/api/random/:request',async(req,res)=>{
 })
 
 app.get('/api/date/:request',async (req, res) => {
-    console.log(req.params.request)
     let request =req.params.request
     let url = `${baseURL}?api_key=${apiKey}&date=${request}`
-    console.log(url)
    try{
     const response = await axios.get(url)
     if(response){
